@@ -32,10 +32,10 @@ public class Extractor {
         File docFile = new File(filePath);
         extractHtml(docFile);
     }
-    public static void extractXls(String xlsPath){
-        File docFile = new File(xlsPath);
-        extractHtml(docFile);
-    }
+//    public static void extractXls(String xlsPath){
+//        File xlsFile = new File(xlsPath);
+//        extractHtml(docFile);
+//    }
     /**
      * 浠庢櫙鐐归〉闈㈢殑html鏂囦欢涓В鏋愬嚭鏉ユ垜浠墍闇�瑕佺殑淇℃伅
      * @param htmlFile html鏂囦欢
@@ -129,7 +129,23 @@ public class Extractor {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    } 
+//    public static void extractXLs(File xlsFile){
+//    	FileWriter fw = null;
+//    	String filename=xlsFile.getPath().replace("C:\\Users\\fanjy14\\Documents\\1", "C:\\Users\\fanjy14\\Documents\\1\\result")+".txt";
+//    	File file=new File(filename);
+//    	int pages;
+//    	PDDocument document=null;
+//    	PDFTextStripper stripper;
+//    	try {
+//    		if(!file.exists()) file.createNewFile();
+//            fw = new FileWriter(filename);
+//            fw.write(content); 
+//            fw.close(); 
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 //    public static void extractDoc(File docFile){
 //    	FileWriter fw = null;
 //    	String filename=docFile.getPath().replace("C:\\Users\\fanjy14\\Documents\\1", "C:\\Users\\fanjy14\\Documents\\1\\result")+".txt";

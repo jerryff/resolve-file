@@ -1,4 +1,6 @@
-import java.io.*;
+import java.io.File;
+
+//import java.io.*;
 
 public class Main {
 
@@ -8,15 +10,15 @@ public class Main {
         String dir = "C:/Users/fanjy14/Documents/1/";
 
         //debug
-        String filePath = "C:/Users/fanjy14/Documents/1/news.tsinghua.edu.cn/am.xls";
+//        String filePath = "C:/Users/fanjy14/Documents/1/news.tsinghua.edu.cn/am.xls";
 
         File dirFile =  new File(dir);
 
         //debug
-        File testFile = new File(filePath);
-        resloveFile(testFile);
+//        File testFile = new File(filePath);
+//        resloveFile(testFile);
 
-        // resloveFile(dirFile);
+         resloveFile(dirFile);
 
 
     }
@@ -48,19 +50,19 @@ public class Main {
                     System.out.println("extract error  "+ file.getPath());
                 }
             }
-            if(path[path.length-1].matches(".*.xlsx?$")){
-                try{
-                	Extractor.extractXls(file);
-                }catch (Exception e){
-                    extraterror++;
-                    System.out.println("extract error  "+ file.getPath());
-                }
-            }
+//            if(path[path.length-1].matches(".*.xlsx?$")){
+//                try{
+//                	Extractor.extractXls(file);
+//                }catch (Exception e){
+//                    extraterror++;
+//                    System.out.println("extract error  "+ file.getPath());
+//                }
+//            }
         }else {
             //System.out.println("鍒嗘瀽鏂囦欢澶�  "+file.getPath());
-        	String folderName=file.getPath().replace("C:\\Users\\fanjy14\\Documents\\1", "C:\\Users\\fanjy14\\Documents\\1\\result")+".txt";
+        	String folderName=file.getPath().replace("C:\\Users\\fanjy14\\Documents\\1", "C:\\Users\\fanjy14\\Documents\\1\\result");
         	File folder = new File(folderName);
-            if(!folder.exists() && folder.isDirectory()) folder.mkdirs();
+            if(!folder.exists()) folder.mkdirs();
             for (File subFile :
                     file.listFiles() ) {
                 resloveFile(subFile);
