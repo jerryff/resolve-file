@@ -4,7 +4,11 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
+import org.apache.poi.POIXMLDocument;
+import org.apache.poi.POIXMLTextExtractor;
+import org.apache.poi.hwpf.extractor.WordExtractor;
+import org.apache.poi.openxml4j.opc.OPCPackage;
+import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import java.io.*;
 import java.util.ListIterator;
 import java.util.regex.Matcher;
@@ -23,6 +27,14 @@ public class Extractor {
     public static void extractPdf(String filePath){
         File pdfFile = new File(filePath);
         extractHtml(pdfFile);
+    }
+    public static void extractDoc(String filePath){
+        File docFile = new File(filePath);
+        extractHtml(docFile);
+    }
+    public static void extractXls(String xlsPath){
+        File docFile = new File(xlsPath);
+        extractHtml(docFile);
     }
     /**
      * 浠庢櫙鐐归〉闈㈢殑html鏂囦欢涓В鏋愬嚭鏉ユ垜浠墍闇�瑕佺殑淇℃伅
@@ -98,6 +110,40 @@ public class Extractor {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
+    public static void extractDoc(File docFile){
+    	FileWriter fw = null;
+    	String filename=docFile.getPath().replace("C:\\Users\\fanjy14\\Documents\\1", "C:\\Users\\fanjy14\\Documents\\1\\result")+".txt";
+    	File file=new File(filename);
+    	int pages;
+    	PDDocument document=null;
+    	PDFTextStripper stripper;
+    	try {
+    		if(!file.exists()) file.createNewFile();
+            fw = new FileWriter(filename);
+            OPCPackage opcPackage = POIXMLDocument.openPackage(docFile.getPath());
+            POIXMLTextExtractor extractor = new XWPFWordExtractor(opcPackage);
+            String content = extractor.getText();
+            fw.write(content); 
+            fw.close(); 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+//    public static void extractDoc(File docFile){
+//    	FileWriter fw = null;
+//    	String filename=docFile.getPath().replace("C:\\Users\\fanjy14\\Documents\\1", "C:\\Users\\fanjy14\\Documents\\1\\result")+".txt";
+//    	File file=new File(filename);
+//    	int pages;
+//    	PDDocument document=null;
+//    	PDFTextStripper stripper;
+//    	try {
+//    		if(!file.exists()) file.createNewFile();
+//            fw = new FileWriter(filename);
+//            fw.write(content); 
+//            fw.close(); 
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

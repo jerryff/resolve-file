@@ -8,7 +8,7 @@ public class Main {
         String dir = "C:/Users/fanjy14/Documents/1/";
 
         //debug
-        String filePath = "C:/Users/fanjy14/Documents/1/news.tsinghua.edu.cn/publish/thunews/9658/20170417114734267469394/1492410830577.pdf";
+        String filePath = "C:/Users/fanjy14/Documents/1/news.tsinghua.edu.cn/am.xls";
 
         File dirFile =  new File(dir);
 
@@ -35,6 +35,22 @@ public class Main {
             if(path[path.length-1].matches(".*.pdf$")){
                 try{
                 	Extractor.extractPdf(file);
+                }catch (Exception e){
+                    extraterror++;
+                    System.out.println("extract error  "+ file.getPath());
+                }
+            }
+            if(path[path.length-1].matches(".*.docx?$")){
+                try{
+                	Extractor.extractDoc(file);
+                }catch (Exception e){
+                    extraterror++;
+                    System.out.println("extract error  "+ file.getPath());
+                }
+            }
+            if(path[path.length-1].matches(".*.xlsx?$")){
+                try{
+                	Extractor.extractXls(file);
                 }catch (Exception e){
                     extraterror++;
                     System.out.println("extract error  "+ file.getPath());

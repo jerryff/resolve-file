@@ -11,5 +11,18 @@
 	<classpathentry kind="lib" path="lib/xmpbox-2.0.6.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.2-javadoc.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="lib/lib/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="lib/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="lib/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="lib/ooxml-lib/curvesapi-1.04.jar"/>
+	<classpathentry kind="lib" path="lib/ooxml-lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/poi-3.16.jar"/>
+	<classpathentry kind="lib" path="lib/poi-examples-3.16.jar"/>
+	<classpathentry kind="lib" path="lib/poi-excelant-3.16.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-3.16.jar"/>
+	<classpathentry kind="lib" path="lib/poi-ooxml-schemas-3.16.jar"/>
+	<classpathentry kind="lib" path="lib/poi-scratchpad-3.16.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
