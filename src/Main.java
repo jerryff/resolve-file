@@ -7,19 +7,22 @@ public class Main {
 	static int extraterror=0;
 
     public static void main(String[] args) {
-        String dir = "C:/Users/fanjy14/Documents/1/";
+        String dir = "C:/Users/fanjy14/Documents/1";
 
         //debug
-//        String filePath = "C:/Users/fanjy14/Documents/1/news.tsinghua.edu.cn/am.xls";
+//        String filePath = "C:/Users/fanjy14/Documents/1/news.tsinghua.edu.cn/a.pptx";
 
         File dirFile =  new File(dir);
 
         //debug
 //        File testFile = new File(filePath);
 //        resloveFile(testFile);
+        Extractor.init();
 
          resloveFile(dirFile);
 
+
+         Extractor.end();
 
     }
 
@@ -31,6 +34,7 @@ public class Main {
                 	Extractor.extractHtml(file);
                 }catch (Exception e){
                     extraterror++;
+                	e.printStackTrace();
                     System.out.println("extract error  "+ file.getPath());
                 }
             }
@@ -50,17 +54,25 @@ public class Main {
                     System.out.println("extract error  "+ file.getPath());
                 }
             }
-//            if(path[path.length-1].matches(".*.xlsx?$")){
-//                try{
-//                	Extractor.extractXls(file);
-//                }catch (Exception e){
-//                    extraterror++;
-//                    System.out.println("extract error  "+ file.getPath());
-//                }
-//            }
+            if(path[path.length-1].matches(".*.xlsx?$")){
+                try{
+                	Extractor.extractXLs(file);
+                }catch (Exception e){
+                    extraterror++;
+                    System.out.println("extract error  "+ file.getPath());
+                }
+            }
+            if(path[path.length-1].matches(".*.pptx?$")){
+                try{
+                	Extractor.extractPpt(file);
+                }catch (Exception e){
+                    extraterror++;
+                    System.out.println("extract error  "+ file.getPath());
+                }
+            }
         }else {
             //System.out.println("鍒嗘瀽鏂囦欢澶�  "+file.getPath());
-        	String folderName=file.getPath().replace("C:\\Users\\fanjy14\\Documents\\1", "C:\\Users\\fanjy14\\Documents\\1\\result");
+        	String folderName=file.getPath().replace("F:\\search_engine\\4", "F:\\search_engine\\4\\result");
         	File folder = new File(folderName);
             if(!folder.exists()) folder.mkdirs();
             for (File subFile :
