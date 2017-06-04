@@ -24,5 +24,6 @@
 	<classpathentry kind="lib" path="lib/poi-ooxml-3.16.jar"/>
 	<classpathentry kind="lib" path="lib/poi-ooxml-schemas-3.16.jar"/>
 	<classpathentry kind="lib" path="lib/poi-scratchpad-3.16.jar"/>
+	<classpathentry kind="lib" path="lib/bcprov-jdk15on-157.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

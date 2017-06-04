@@ -7,10 +7,10 @@ public class Main {
 	static int extraterror=0;
 
     public static void main(String[] args) {
-        String dir = "C:/Users/fanjy14/Documents/1";
+        String dir = "F:/search_engine/5";
 
         //debug
-//        String filePath = "C:/Users/fanjy14/Documents/1/news.tsinghua.edu.cn/a.pptx";
+//        String dir = "F:/search_engine/5/www.tsinghua.edu.cn/publish/env/6420/20140111194453647986157/14-1-10.doc";
 
         File dirFile =  new File(dir);
 
@@ -72,9 +72,6 @@ public class Main {
             }
         }else {
             //System.out.println("鍒嗘瀽鏂囦欢澶�  "+file.getPath());
-        	String folderName=file.getPath().replace("F:\\search_engine\\4", "F:\\search_engine\\4\\result");
-        	File folder = new File(folderName);
-            if(!folder.exists()) folder.mkdirs();
             for (File subFile :
                     file.listFiles() ) {
                 resloveFile(subFile);
@@ -84,7 +81,7 @@ public class Main {
 
 //    private static void writeLog(String log){
 //        try {
-//            ops.write((log+"\n").getBytes());
+//            ops.write((log+"/n").getBytes());
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
